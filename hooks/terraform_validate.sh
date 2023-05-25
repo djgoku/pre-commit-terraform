@@ -55,6 +55,7 @@ function match_validate_errors {
       "Module version requirements have changed") return 1 ;;
       "Module not installed") return 1 ;;
       "Could not load plugin") return 1 ;;
+      "error configuring S3 Backend") return 1 ;;
     esac
   done < <(jq -rc '.diagnostics[]' <<< "$validate_output")
 
